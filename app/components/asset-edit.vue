@@ -63,7 +63,7 @@
                         <input id="form-filename" class="uk-width-1-1" type="text" v-model="asset.data.filename">
                     </div>
                 </div>
-                <div v-if="asset.data.lang == 'js'" class="uk-form-row">
+                <div class="uk-form-row" v-if="asset.data.lang == 'js'">
                     <label for="form-execution" class="uk-form-label">{{ 'Execution' | trans }}</label>
                     <div class="uk-form-controls">
                         <select id="form-execution" class="uk-form-width-large" v-model="asset.data.execution">
@@ -71,6 +71,29 @@
                             <option value="deferred" :disabled = "asset.data.type == 'inline'">{{ 'Deferred' | trans }}</option>
                             <option value="immediately">{{ 'Immediately' | trans }}</option>
                         </select>
+                    </div>
+                </div>
+                <div class="uk-form-row" v-if="asset.data.lang == 'js'">
+                    <span class="uk-form-label">{{ 'Load Dependencies' | trans }}</span>
+                    <div class="uk-form-controls uk-form-controls-text">
+                        <p class="uk-form-controls-condensed">
+                            <input id="form-jquery" type="checkbox" v-model="asset.data.dependencies.jquery"> {{ 'jQuery' }}
+                        </p>
+                        <p class="uk-form-controls-condensed">
+                            <input id="form-vuejs" type="checkbox" v-model="asset.data.dependencies.vue"> {{ 'Vue.js' }}
+                        </p>
+                        <p class="uk-form-controls-condensed">
+                            <input id="form-codemirror" type="checkbox" v-model="asset.data.dependencies.codemirror"> {{ 'Codemirror' }}
+                        </p>
+                        <p class="uk-form-controls-condensed">
+                            <input id="form-lodash" type="checkbox" v-model="asset.data.dependencies.lodash"> {{ 'Lodash' }}
+                        </p>
+                        <p class="uk-form-controls-condensed">
+                            <input id="form-marked" type="checkbox" v-model="asset.data.dependencies.marked"> {{ 'Marked' }}
+                        </p>
+                        <p class="uk-form-controls-condensed">
+                            <input id="form-uikit" type="checkbox" v-model="asset.data.dependencies.uikit"> {{ 'Uikit' }}
+                        </p>
                     </div>
                 </div>
             </div>
