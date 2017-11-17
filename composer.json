@@ -1,7 +1,7 @@
 {
   "name": "spqr/assets",
   "module": "spqr/assets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "pagekit-extension",
   "title": "Assets",
   "description": "Allows you to include JavaScript or CSS to specific pages",
